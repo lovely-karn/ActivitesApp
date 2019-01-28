@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <!-- Background Color -->
+            <solid android:color="@color/white" />
+
+            <corners android:radius="150dp" />
+            <!-- Border Color -->
+            <stroke android:width="@dimen/button_border_line_thickness" android:color="@color/white" />
+
+            <padding android:bottom="5dp" android:left="10dp" android:right="10dp" android:top="5dp" />
+
+        </shape>
+    </item>
+</selector>

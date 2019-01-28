@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llActivityList"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_list_white_background">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvActivityList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="0dp"
+        android:overScrollMode="never" />
+
+</android.support.v7.widget.LinearLayoutCompat>

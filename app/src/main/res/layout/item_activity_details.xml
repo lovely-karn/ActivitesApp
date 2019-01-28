@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/section_cell_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardView"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-20dp"
+            android:elevation="20dp">
+
+            <ImageView
+                android:id="@+id/ivSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_background"
+                android:padding="10dp"
+                android:src="@drawable/ic_save_white_24dp" />
+
+            <ImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/circle_background"
+                android:padding="10dp"
+                android:src="@drawable/ic_delete_white_24dp" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="45dp">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/llSectionCellHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_section_header_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:padding="15dp"
+                        android:src="@drawable/ic_directions_walk_white_24dp" />
+
+                    <TextView
+                        android:id="@+id/tvActivityName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/rlArrow"
+                        android:layout_toEndOf="@+id/ivActivity"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:padding="10dp"
+                        android:textColor="@color/white"
+                        tools:text="WALKING" />
+
+                    <!--todo :- dropdown picker has to be there -->
+
+                    <RelativeLayout
+                        android:id="@+id/rlArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="50dp">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/ivDown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivUp"
+                            android:background="@drawable/circle_background"
+                            android:scaleType="fitStart"
+                            android:src="@drawable/ic_arrow_drop_down_white_24dp" />
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/ivUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/circle_background"
+                            android:src="@drawable/ic_arrow_drop_up_white_24dp" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp">
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivStatTime"
+                            style="@style/imageView_padding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_directions_walk_24dp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvStartTime"
+                            style="@style/ediitext_non_clickable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/hint_start_time"
+                            android:onClick="onClick" />
+
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivDuration"
+                            style="@style/imageView_padding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_access_time_24dp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvDuration"
+                            style="@style/ediitext_non_clickable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/hint_duration"
+                            android:onClick="onClick" />
+
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:tag="tennis">
+
+                        <ImageView
+                            android:id="@+id/ivDistance"
+                            style="@style/imageView_padding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_place_24dp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvDistance"
+                            style="@style/ediitext_non_clickable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_background"
+                            android:hint="@string/hint_distance"
+                            android:onClick="onClick"
+                            android:visibility="visible" />
+
+                        <Spinner
+                            android:id="@+id/spinnerTennis"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:dropDownWidth="fill_parent"
+                            android:visibility="gone" />
+
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ivIntensity"
+                            style="@style/imageView_padding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_equalizer_black_24dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/text_intensity"
+                            android:textColor="@color/gray" />
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                    <android.support.v7.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="30dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="20dp" />
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatRadioButton
+                                android:id="@+id/tvHigh"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:width="0dp"
+                                android:background="@drawable/button_selector"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="@string/text_high"
+                                android:textColor="@drawable/textview_sselector" />
+
+                            <android.support.v7.widget.AppCompatRadioButton
+                                android:id="@+id/tvMid"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="0.3"
+                                android:width="0dp"
+                                android:background="@drawable/button_selector"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingStart="1dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="10dp"
+                                android:text="@string/text_mid"
+                                android:textColor="@drawable/textview_sselector" />
+
+                            <android.support.v7.widget.AppCompatRadioButton
+                                android:id="@+id/tvLow"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.3"
+                                android:width="0dp"
+                                android:background="@drawable/button_selector"
+                                android:button="@null"
+                                android:gravity="center"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="@string/text_low"
+                                android:textColor="@drawable/textview_sselector" />
+
+                        </RadioGroup>
+                    </android.support.v7.widget.LinearLayoutCompat>
+
+                </android.support.v7.widget.LinearLayoutCompat>
+
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</layout>
